@@ -5,18 +5,20 @@ import { RouterModule } from '@angular/router'
 
 
 import { AppComponent } from './app.component'
+import { HeaderComponent } from './header/header.component'
 
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule,
-    HttpModule,
-    RouterModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        HeaderComponent
+    ],
+    imports: [
+        BrowserModule,
+        HttpModule,
+        RouterModule
+    ],
+    providers: [],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }
