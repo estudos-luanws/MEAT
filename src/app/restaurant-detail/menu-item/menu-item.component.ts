@@ -1,15 +1,26 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { MenuItem } from './menu-item.model';
 
 @Component({
-  selector: 'mt-menu-item',
-  templateUrl: './menu-item.component.html',
-  styleUrls: ['./menu-item.component.css']
+    selector: 'mt-menu-item',
+    templateUrl: './menu-item.component.html',
+    styleUrls: ['./menu-item.component.css']
 })
 export class MenuItemComponent implements OnInit {
+    @Input()
+    menuItem: MenuItem
 
-  constructor() { }
+    @Output()
+    eventEmitter = new EventEmitter
 
-  ngOnInit() {
-  }
+    constructor() { }
 
+    ngOnInit() {
+    }
+
+    emitAddEvent() {
+        this.eventEmitter.emit(this.menuItem)
+    }
+
+    
 }
