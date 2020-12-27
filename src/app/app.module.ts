@@ -15,10 +15,11 @@ import { MenuComponent } from './restaurant-detail/menu/menu.component'
 import { ShoppingCartComponent } from './restaurant-detail/shopping-cart/shopping-cart.component'
 import { MenuItemComponent } from './restaurant-detail/menu-item/menu-item.component'
 import { ReviewsComponent } from './restaurant-detail/reviews/reviews.component'
-import { ShoppingCartService } from './restaurant-detail/shopping-cart/shopping-cart.service';
+import { ShoppingCartService } from './restaurant-detail/shopping-cart/shopping-cart.service'
 import { OrderComponent } from './order/order.component'
-import { FormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms'
 import { InputComponent } from './shared/input/input.component'
+import { RadioComponent } from './shared/radio/radio.component'
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { InputComponent } from './shared/input/input.component'
         MenuItemComponent,
         ReviewsComponent,
         OrderComponent,
-        InputComponent
+        InputComponent,
+        RadioComponent
     ],
     imports: [
         BrowserModule,
