@@ -34,7 +34,6 @@ export class RadioComponent<T> implements OnInit, ControlValueAccessor {
         this.onChange = fn
     }
     registerOnTouched(fn: any): void {
-        throw new Error('Method not implemented.')
     }
 
     setValue(value: T) {

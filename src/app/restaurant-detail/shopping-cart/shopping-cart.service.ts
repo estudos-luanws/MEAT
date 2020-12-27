@@ -10,7 +10,7 @@ export class ShoppingCartService {
 
     addItem(item: MenuItem) {
         const foundItem = this.items.find((i => i.menuItem.id === item.id))
-        if (foundItem) foundItem.quantity++
+        if (foundItem) this.increaseQuantity(foundItem)
         else this.items.push(new CartItem(item))
     }
 
@@ -22,5 +22,16 @@ export class ShoppingCartService {
         return this.items
             .map(item => item.value())
             .reduce((sum, value) => sum + value, 0)
+    }
+
+    increaseQuantity(item: CartItem) {
+        item.quantity++
+    }
+
+    decreaseQuantity(item: CartItem) {
+        item.quantity--
+        if (item.quantity <= 0) {
+            this.removeItem(item)
+        }
     }
 }
