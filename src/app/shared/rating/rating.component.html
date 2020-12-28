@@ -1,3 +1,4 @@
 <p>
-  rating works!
+  <i *ngFor="let r of rates" class="fa" [class.fa-star]="r <= viewRate" [class.fa-star-o]="r > viewRate" (click)="setRate(r)"
+    (mouseenter)="setViewRate(r)" (mouseleave)="clearViewRate()"></i>
 </p>
