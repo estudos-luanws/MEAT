@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core'
+import { FormBuilder, FormGroup } from '@angular/forms'
 import { Router } from '@angular/router'
 import { CartItem } from 'app/restaurant-detail/shopping-cart/cart-item.model'
 import { RadioOption } from 'app/shared/radio/radion-option.model'
@@ -11,6 +12,7 @@ import { OrderService } from './order.service'
     styleUrls: ['./order.component.css']
 })
 export class OrderComponent implements OnInit {
+    form: FormGroup
     delivery: number = 8
 
     paymentOptions: RadioOption<string>[] = [
@@ -22,9 +24,19 @@ export class OrderComponent implements OnInit {
     constructor(
         private orderService: OrderService,
         private router: Router,
+        private formBuilder: FormBuilder,
     ) { }
 
     ngOnInit() {
+        this.form = this.formBuilder.group({
+            name: '',
+            email: this.formBuilder.control(''),
+            emailConfirmation: this.formBuilder.control(''),
+            address: this.formBuilder.control(''),
+            number: this.formBuilder.control(''),
+            optionalAddress: this.formBuilder.control(''),
+            paymentOption: this.formBuilder.control(''),
+        })
     }
 
     itemsValue(): number {
