@@ -15,6 +15,9 @@ export class OrderComponent implements OnInit {
     form: FormGroup
     delivery: number = 8
 
+    emailPattern = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
+    numberPattern = /^[0-9]*$/
+
     paymentOptions: RadioOption<string>[] = [
         { label: 'Dinheiro', value: 'MON' },
         { label: 'Cartão de débito', value: 'DEB' },
@@ -33,12 +36,26 @@ export class OrderComponent implements OnInit {
                 Validators.required,
                 Validators.minLength(5)
             ]),
-            email: this.formBuilder.control(''),
-            emailConfirmation: this.formBuilder.control(''),
-            address: this.formBuilder.control(''),
-            number: this.formBuilder.control(''),
+            email: this.formBuilder.control('', [
+                Validators.required,
+                Validators.pattern(this.emailPattern)
+            ]),
+            emailConfirmation: this.formBuilder.control('', [
+                Validators.required,
+                Validators.pattern(this.emailPattern)
+            ]),
+            address: this.formBuilder.control('', [
+                Validators.required,
+                Validators.minLength(5)
+            ]),
+            number: this.formBuilder.control('', [
+                Validators.required,
+                Validators.pattern(this.numberPattern)
+            ]),
             optionalAddress: this.formBuilder.control(''),
-            paymentOptions: this.formBuilder.control(''),
+            paymentOption: this.formBuilder.control('', [
+                Validators.required
+            ]),
         })
     }
 
