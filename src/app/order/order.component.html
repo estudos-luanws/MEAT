@@ -18,48 +18,54 @@
             Seus dados:
           </p>
         </div>
+
         <div class="col-sm-6 col-xs-12">
           <mt-input-container errorMessage="Campo obrigatório e com 5 caracteres" label="Nome">
-            <input name="name" formControlName="name" type="text" class="form-control" id="inputSuccess"
-              autocomplete="off" placeholder="Nome">
+            <input formControlName="name" type="text" class="form-control" autocomplete="off" placeholder="Nome">
           </mt-input-container>
         </div>
+
         <div class="col-sm-3 col-xs-6">
           <mt-input-container errorMessage="E-mail inválido" label="E-mail">
-            <input name="email" formControlName="email" type="text" class="form-control" id="inputSuccess"
-              autocomplete="off" placeholder="E-mail">
+            <input type="text" class="form-control" formControlName="email" placeholder="E-mail" autocomplete="off">
           </mt-input-container>
         </div>
+
         <div class="col-sm-3 col-xs-6">
-          <mt-input-container errorMessage="E-mail inválido" label="Confirmação de e-mail">
-            <input name="emailConfirmation" formControlName="emailConfirmation" type="text" class="form-control"
-              id="inputSuccess" autocomplete="off" placeholder="Confirmação de e-mail">
+          <mt-input-container errorMessage="E-mail inválido" label="E-mail">
+            <input type="text" class="form-control" formControlName="emailConfirmation"
+              placeholder="Confirmação do e-mail" autocomplete="off">
           </mt-input-container>
         </div>
+
       </div>
 
       <div class="row">
         <div class="col-xs-12">
           <p class="lead">Endereço de Entrega:</p>
         </div>
+
         <div class="col-sm-6 col-xs-12">
           <mt-input-container errorMessage="Campo obrigatório e com 5 caracteres" label="Endereço">
             <input name="address" formControlName="address" type="text" class="form-control" id="inputSuccess"
               autocomplete="off" placeholder="Endereço">
           </mt-input-container>
         </div>
+
         <div class="col-sm-3 col-xs-6">
           <mt-input-container errorMessage="Obrigatório e somente números">
             <input name="number" autocomplete="off" formControlName="number" type="text" class="form-control"
               id="inputSuccess" placeholder="Número">
           </mt-input-container>
         </div>
+
         <div class="col-sm-3 col-xs-6">
           <mt-input-container>
             <input name="optionalAddress" formControlName="optionalAddress" type="text" class="form-control"
               id="inputSuccess" placeholder="Complemento">
           </mt-input-container>
         </div>
+        
         <!-- /.col -->
       </div>
       <!-- /.row -->

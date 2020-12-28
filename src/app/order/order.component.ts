@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core'
-import { FormBuilder, FormGroup } from '@angular/forms'
+import { FormBuilder, FormGroup, Validators } from '@angular/forms'
 import { Router } from '@angular/router'
 import { CartItem } from 'app/restaurant-detail/shopping-cart/cart-item.model'
 import { RadioOption } from 'app/shared/radio/radion-option.model'
@@ -29,13 +29,16 @@ export class OrderComponent implements OnInit {
 
     ngOnInit() {
         this.form = this.formBuilder.group({
-            name: '',
+            name: this.formBuilder.control('', [
+                Validators.required,
+                Validators.minLength(5)
+            ]),
             email: this.formBuilder.control(''),
             emailConfirmation: this.formBuilder.control(''),
             address: this.formBuilder.control(''),
             number: this.formBuilder.control(''),
             optionalAddress: this.formBuilder.control(''),
-            paymentOption: this.formBuilder.control(''),
+            paymentOptions: this.formBuilder.control(''),
         })
     }
 
