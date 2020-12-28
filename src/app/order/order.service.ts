@@ -41,8 +41,7 @@ export class OrderService {
             `${MEAT_API}/orders`,
             JSON.stringify(order),
             new RequestOptions({ headers })
-        )
-            .map(response => response.json())
+        ).map(response => response.json()).map(order => order.id)
     }
 
     clear() {
