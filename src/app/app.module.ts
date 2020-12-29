@@ -14,7 +14,7 @@ import { ShoppingCartComponent } from './restaurant-detail/shopping-cart/shoppin
 import { MenuItemComponent } from './restaurant-detail/menu-item/menu-item.component'
 import { ReviewsComponent } from './restaurant-detail/reviews/reviews.component'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
-import { OrderSummaryComponent } from './order-summary/order-summary.component'
+import { OrderSummaryComponent } from './order/order-summary/order-summary.component'
 import { SharedModule } from './shared/shared.module'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 

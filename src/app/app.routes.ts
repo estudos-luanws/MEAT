@@ -4,7 +4,7 @@ import { MenuComponent } from './restaurant-detail/menu/menu.component'
 import { RestaurantDetailComponent } from './restaurant-detail/restaurant-detail.component'
 import { RestaurantsComponent } from './restaurants/restaurants.component'
 import { ReviewsComponent } from './restaurant-detail/reviews/reviews.component'
-import { OrderSummaryComponent } from './order-summary/order-summary.component'
+import { OrderSummaryComponent } from './order/order-summary/order-summary.component'
 
 export const ROUTES: Routes = [
     { path: '', component: HomeComponent },
