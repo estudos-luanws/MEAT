@@ -13,7 +13,7 @@ import { OrderService } from './order.service'
 })
 export class OrderComponent implements OnInit {
     form: FormGroup
-    delivery: number = 8
+    delivery = 8
 
     emailPattern = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
     numberPattern = /^[0-9]*$/
