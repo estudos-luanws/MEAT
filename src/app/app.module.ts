@@ -16,6 +16,7 @@ import { ReviewsComponent } from './restaurant-detail/reviews/reviews.component'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { OrderSummaryComponent } from './order-summary/order-summary.component'
 import { SharedModule } from './shared/shared.module'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 
 
 @NgModule({
@@ -41,6 +42,7 @@ import { SharedModule } from './shared/shared.module'
         FormsModule,
         ReactiveFormsModule,
         SharedModule.forRoot(),
+        BrowserAnimationsModule,
     ],
     providers: [
         { provide: LOCALE_ID, useValue: 'pt-BR' },
