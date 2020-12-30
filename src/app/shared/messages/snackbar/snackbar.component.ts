@@ -28,7 +28,7 @@ type Visibility = 'hidden' | 'visible'
     ]
 })
 export class SnackbarComponent implements OnInit {
-    message: string = "Hello there!"
+    message = 'Hello there!'
     snackVisibility: Visibility = 'hidden'
 
     constructor(
