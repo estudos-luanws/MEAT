@@ -18,6 +18,7 @@ import { OrderSummaryComponent } from './order/order-summary/order-summary.compo
 import { SharedModule } from './shared/shared.module'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { NotFoundComponent } from './not-found/not-found.component'
+import { HashLocationStrategy, LocationStrategy } from '@angular/common'
 
 
 @NgModule({
@@ -48,6 +49,7 @@ import { NotFoundComponent } from './not-found/not-found.component'
     ],
     providers: [
         { provide: LOCALE_ID, useValue: 'pt-BR' },
+        { provide: LocationStrategy, useClass: HashLocationStrategy }
     ],
     bootstrap: [AppComponent]
 })
