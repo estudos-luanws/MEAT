@@ -2,6 +2,11 @@ import { Component, OnInit } from '@angular/core'
 import { Restaurant } from './restaurant/restaurant.model'
 import { RestaurantsService } from './restaurants.service'
 import { animate, state, style, transition, trigger } from '@angular/animations'
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms'
+import 'rxjs/add/operator/switchMap'
+import 'rxjs/add/operator/do'
+import 'rxjs/add/operator/debounceTime'
+import 'rxjs/add/operator/distinctUntilChanged'
 
 type SearchBarState = 'hidden' | 'visible'
 
@@ -27,11 +32,26 @@ type SearchBarState = 'hidden' | 'visible'
 export class RestaurantsComponent implements OnInit {
     restaurants: Restaurant[]
     searchBarState: SearchBarState = 'hidden'
+    searchForm: FormGroup
+    searchControl: FormControl
 
-    constructor(private restaurantService: RestaurantsService) { }
+    constructor(
+        private restaurantService: RestaurantsService,
+        private formBuilder: FormBuilder
+    ) { }
 
     ngOnInit() {
         this.restaurantService.restaurants()
+            .subscribe(restaurants => this.restaurants = restaurants)
+        this.searchControl = this.formBuilder.control('')
+        this.searchForm = this.formBuilder.group({
+            searchControl: this.searchControl
+        })
+        this.searchControl.valueChanges
+            .debounceTime(500)
+            .distinctUntilChanged()
+            .do(search => console.log(`q=${search}`))
+            .switchMap(search => this.restaurantService.restaurants(search))
             .subscribe(restaurants => this.restaurants = restaurants)
     }
 
